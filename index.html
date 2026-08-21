@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cetak Kertas Nasi Custom | cetakkertasnasi.com</title>
+<meta name="description" content="Jasa cetak kertas nasi custom logo dan desain sendiri. Tahan minyak, food grade, ukuran dan warna fleksibel. Konsultasi gratis via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --kraft:#E8DCC8;
+    --kraft-dark:#D9C6A0;
+    --paper:#FAF6EC;
+    --ink:#2B2420;
+    --ink-soft:#6B5F50;
+    --chili:#C1440E;
+    --chili-dark:#9C3609;
+    --leaf:#3F5233;
+    --gold:#B8860B;
+    --wa:#1F9E58;
+    --line:rgba(43,36,32,0.14);
+    --radius:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--kraft);
+    line-height:1.6;
+  }
+  .kraft-texture{
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(43,36,32,0.035) 0, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(43,36,32,0.035) 0, transparent 45%),
+      radial-gradient(circle at 50% 90%, rgba(43,36,32,0.02) 0, transparent 50%);
+  }
+  h1,h2,h3,.stamp{font-family:'Space Grotesk',sans-serif;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ===== HEADER ===== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(232,220,200,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 24px;max-width:1080px;margin:0 auto;
+  }
+  .logo{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;font-size:19px;letter-spacing:-0.01em;
+  }
+  .logo span{color:var(--chili);}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--wa);color:#fff;
+    padding:10px 18px;border-radius:8px;
+    font-weight:600;font-size:14px;text-decoration:none;
+    white-space:nowrap;
+  }
+
+  /* ===== HERO ===== */
+  .hero{padding:64px 24px 56px;}
+  .hero-inner{
+    max-width:1080px;margin:0 auto;
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;
+  }
+  .stamp-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    border:2px dashed var(--chili);
+    color:var(--chili);
+    font-weight:700;font-size:12.5px;letter-spacing:0.08em;
+    padding:8px 14px;border-radius:999px;
+    transform:rotate(-2deg);
+    margin-bottom:22px;
+    text-transform:uppercase;
+  }
+  .hero h1{
+    font-size:clamp(32px,4.6vw,50px);
+    font-weight:700;line-height:1.12;letter-spacing:-0.015em;
+    margin-bottom:20px;
+  }
+  .hero h1 em{
+    font-style:normal;color:var(--chili);
+  }
+  .hero p.lead{
+    font-size:17px;color:var(--ink-soft);
+    max-width:480px;margin-bottom:32px;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:14px 24px;border-radius:8px;
+    font-weight:600;font-size:15px;text-decoration:none;
+    border:1.5px solid transparent;cursor:pointer;
+    transition:transform 0.15s ease;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{background:var(--chili);color:#fff;}
+  .btn-primary:hover{background:var(--chili-dark);}
+  .btn-outline{background:transparent;border-color:var(--ink);color:var(--ink);}
+  .btn-outline:hover{background:var(--ink);color:var(--paper);}
+  .btn-wa{background:var(--wa);color:#fff;}
+  .btn-wa:hover{filter:brightness(0.93);}
+  .btn-block{width:100%;}
+
+  .hero-visual{
+    position:relative;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:28px;
+    box-shadow:0 18px 40px -22px rgba(43,36,32,0.35);
+    transform:rotate(1.5deg);
+  }
+  .hero-visual::before{
+    content:"";
+    position:absolute;inset:10px;
+    border:1.5px dashed rgba(43,36,32,0.18);
+    border-radius:10px;
+    pointer-events:none;
+  }
+  .fold-mock{
+    display:grid;gap:12px;
+  }
+  .fold-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--ink-soft);}
+  .fold-square{
+    aspect-ratio:1/1;
+    background:
+      repeating-linear-gradient(45deg, transparent 0 10px, rgba(43,36,32,0.035) 10px 20px),
+      var(--kraft);
+    border:2px solid var(--ink);
+    border-radius:6px;
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+  }
+  .fold-square .brand-mark{
+    font-family:'Space Grotesk',sans-serif;font-weight:700;
+    color:var(--chili);font-size:22px;text-align:center;line-height:1.2;
+    transform:rotate(-4deg);
+  }
+  .fold-square .brand-mark small{display:block;font-size:9px;color:var(--ink-soft);font-weight:500;letter-spacing:0.1em;}
+
+  /* ===== SECTION LABEL ===== */
+  .section-label{
+    display:inline-block;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;color:var(--chili);
+    letter-spacing:0.08em;text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  section{padding:64px 24px;}
+  .section-head{max-width:640px;margin-bottom:40px;}
+  .section-head h2{font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.01em;margin-bottom:10px;}
+  .section-head p{color:var(--ink-soft);font-size:15.5px;}
+
+  /* ===== KELEBIHAN ===== */
+  .features{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  }
+  .feature-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:12px;padding:24px;
+  }
+  .feature-icon{
+    width:40px;height:40px;border-radius:8px;
+    background:rgba(193,68,14,0.1);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;font-size:19px;
+  }
+  .feature-card h3{font-size:16px;font-weight:600;margin-bottom:6px;font-family:'Inter',sans-serif;}
+  .feature-card p{font-size:14px;color:var(--ink-soft);}
+
+  /* ===== PILIHAN 3 JALUR ===== */
+  .choices{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  }
+  .choice-card{
+    background:var(--paper);
+    border:1.5px solid var(--line);
+    border-radius:14px;padding:28px 24px;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .choice-card.featured{border-color:var(--chili);border-width:2px;position:relative;}
+  .choice-tag{
+    position:absolute;top:-12px;left:24px;
+    background:var(--chili);color:#fff;
+    font-size:11px;font-weight:700;letter-spacing:0.05em;
+    padding:4px 10px;border-radius:999px;text-transform:uppercase;
+  }
+  .choice-num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;color:var(--ink-soft);letter-spacing:0.06em;
+  }
+  .choice-card h3{font-size:19px;font-weight:700;}
+  .choice-card p{font-size:14px;color:var(--ink-soft);flex-grow:1;}
+
+  /* ===== KALKULATOR ===== */
+  .calc-wrap{
+    display:grid;grid-template-columns:1fr 0.85fr;gap:32px;align-items:start;
+  }
+  .calc-panel{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:14px;padding:28px;
+  }
+  .field-group{margin-bottom:24px;}
+  .field-group:last-child{margin-bottom:0;}
+  .field-label{
+    display:block;font-weight:600;font-size:14px;margin-bottom:10px;
+  }
+  .option-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .opt-btn{
+    padding:10px 16px;border-radius:8px;
+    border:1.5px solid var(--line);
+    background:var(--kraft);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13.5px;font-weight:500;color:var(--ink);
+    cursor:pointer;transition:all 0.12s ease;
+  }
+  .opt-btn:hover{border-color:var(--ink-soft);}
+  .opt-btn.active{
+    background:var(--ink);color:var(--paper);border-color:var(--ink);
+  }
+  .custom-qty{
+    display:flex;align-items:center;gap:10px;margin-top:12px;
+  }
+  .custom-qty input{
+    width:140px;padding:10px 12px;border-radius:8px;
+    border:1.5px solid var(--line);
+    font-family:'IBM Plex Mono',monospace;font-size:13.5px;
+    background:var(--kraft);
+  }
+  .custom-qty input:focus{outline:none;border-color:var(--chili);}
+  .custom-hint{font-size:12.5px;color:var(--ink-soft);}
+  .field-error{font-size:12.5px;color:var(--chili);margin-top:8px;display:none;}
+
+  /* Struk / receipt */
+  .receipt{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:0;
+    position:relative;
+    box-shadow:0 14px 30px -20px rgba(43,36,32,0.4);
+  }
+  .receipt-top, .receipt-bottom{
+    height:14px;
+    background:
+      radial-gradient(circle at 8px 0, transparent 7px, var(--kraft) 7px) top left/16px 14px repeat-x;
+  }
+  .receipt-bottom{transform:rotate(180deg);}
+  .receipt-body{padding:8px 26px 22px;font-family:'IBM Plex Mono',monospace;}
+  .receipt-head{text-align:center;border-bottom:1px dashed var(--line);padding-bottom:16px;margin-bottom:16px;}
+  .receipt-head .r-title{font-weight:700;font-size:14px;letter-spacing:0.06em;}
+  .receipt-head .r-sub{font-size:11px;color:var(--ink-soft);margin-top:4px;}
+  .r-line{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;}
+  .r-line .r-label{color:var(--ink-soft);}
+  .r-divider{border-top:1px dashed var(--line);margin:12px 0;}
+  .r-total{display:flex;justify-content:space-between;font-size:16px;font-weight:600;padding-top:4px;}
+  .r-total .r-amt{color:var(--chili);}
+  .r-note{font-size:11px;color:var(--ink-soft);text-align:center;margin-top:16px;}
+  .r-empty{text-align:center;color:var(--ink-soft);font-size:13px;padding:20px 0;}
+
+  /* ===== SAMPLE BANNER ===== */
+  .sample-banner{
+    background:var(--leaf);
+    border-radius:16px;
+    padding:40px;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+    flex-wrap:wrap;
+    color:var(--paper);
+  }
+  .sample-banner h2{font-size:22px;font-weight:700;margin-bottom:8px;font-family:'Space Grotesk',sans-serif;}
+  .sample-banner p{color:rgba(250,246,236,0.85);font-size:14.5px;max-width:420px;}
+  .sample-banner .btn-outline{border-color:var(--paper);color:var(--paper);}
+  .sample-banner .btn-outline:hover{background:var(--paper);color:var(--leaf);}
+
+  /* ===== FOOTER ===== */
+  footer{
+    border-top:1px solid var(--line);
+    padding:32px 24px;
+    text-align:center;
+  }
+  footer p{font-size:13px;color:var(--ink-soft);}
+  footer .foot-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;margin-bottom:6px;}
+
+  @media (max-width:860px){
+    .hero-inner{grid-template-columns:1fr;gap:36px;}
+    .features{grid-template-columns:1fr 1fr;}
+    .choices{grid-template-columns:1fr;}
+    .calc-wrap{grid-template-columns:1fr;}
+    .sample-banner{flex-direction:column;text-align:center;align-items:center;}
+  }
+  @media (max-width:560px){
+    .features{grid-template-columns:1fr;}
+    .nav-cta span.nav-cta-text{display:none;}
+  }
+</style>
+</head>
+<body class="kraft-texture">
+
+<header>
+  <div class="nav">
+    <div class="logo">Cetak<span>KertasNasi</span></div>
+    <a class="nav-cta" href="https://wa.me/6282141139117?text=Halo%2C%20saya%20ingin%20konsultasi%20cetak%20kertas%20nasi." target="_blank" rel="noopener">
+      <span class="nav-cta-text">Konsultasi</span> WhatsApp
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="stamp-badge">Cetak food grade</div>
+      <h1>Kertas nasi bermerek,<br>bikin warung <em>kelihatan beda</em></h1>
+      <p class="lead">Kami cetak kertas nasi custom pakai logo dan desain warung Anda sendiri. Tahan minyak, aman untuk makanan, dan siap kirim ke seluruh Indonesia.</p>
+      <div class="hero-actions">
+        <a class="btn btn-wa" href="https://wa.me/6282141139117?text=Halo%2C%20saya%20ingin%20konsultasi%20cetak%20kertas%20nasi." target="_blank" rel="noopener">Konsultasi via WhatsApp</a>
+        <a class="btn btn-outline" href="#hitung">Hitung harga sekarang</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="fold-mock">
+        <div class="fold-square">
+          <div class="brand-mark">Warung<br>Anda<small>LOGO DI SINI</small></div>
+        </div>
+        <div class="fold-row">
+          <span>Ukuran 15 x 20 cm</span>
+          <span>2 warna</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kelebihan">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-label">Kenapa cetak di sini</span>
+      <h2>Dibuat khusus untuk kebutuhan warung dan katering</h2>
+      <p>Bukan kertas nasi biasa. Kami fokus di satu produk ini saja, jadi kualitas dan kecepatannya terjaga.</p>
+    </div>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">🛢️</div>
+        <h3>Tahan minyak dan panas</h3>
+        <p>Kertas food grade, aman bersentuhan langsung dengan makanan panas dan berminyak.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>Warna dan desain custom</h3>
+        <p>Cetak 1 sampai 4 warna dengan logo dan desain warung Anda sendiri.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📐</div>
+        <h3>Ukuran fleksibel</h3>
+        <p>Tersedia 10x10, 15x20, 30x30 cm, atau ukuran custom sesuai kebutuhan.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📦</div>
+        <h3>Minimal order terjangkau</h3>
+        <p>Mulai dari 2.000 lembar, cocok untuk warung kecil hingga katering besar.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Proses cepat</h3>
+        <p>Estimasi produksi jelas di awal, tanpa nunggu tanpa kepastian.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✅</div>
+        <h3>Bisa coba sample dulu</h3>
+        <p>Belum yakin? Pesan sample dulu sebelum order dalam jumlah besar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pilihan">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-label">Mulai dari sini</span>
+      <h2>Pilih cara yang paling nyaman buat Anda</h2>
+      <p>Tidak perlu bingung. Ada tiga jalan, tinggal pilih sesuai kebutuhan.</p>
+    </div>
+    <div class="choices">
+      <div class="choice-card">
+        <span class="choice-num">Jalan 01</span>
+        <h3>Konsultasi dulu</h3>
+        <p>Belum tahu spek yang pas? Ngobrol langsung dengan tim kami via WhatsApp, gratis dan tanpa komitmen.</p>
+        <a class="btn btn-wa btn-block" href="https://wa.me/6282141139117?text=Halo%2C%20saya%20ingin%20konsultasi%20cetak%20kertas%20nasi." target="_blank" rel="noopener">Chat WhatsApp</a>
+      </div>
+      <div class="choice-card featured">
+        <span class="choice-tag">Paling cepat</span>
+        <span class="choice-num">Jalan 02</span>
+        <h3>Hitung harga sendiri</h3>
+        <p>Sudah tahu warna, ukuran, dan jumlah yang diinginkan? Hitung estimasi harga langsung di halaman ini.</p>
+        <a class="btn btn-primary btn-block" href="#hitung">Buka kalkulator harga</a>
+      </div>
+      <div class="choice-card">
+        <span class="choice-num">Jalan 03</span>
+        <h3>Beli sample dulu</h3>
+        <p>Mau pegang dan lihat hasil cetaknya dulu sebelum order banyak? Kami kirim sample produk.</p>
+        <a class="btn btn-outline btn-block" href="https://wa.me/6282141139117?text=Halo%2C%20saya%20ingin%20pesan%20sample%20produk%20kertas%20nasi." target="_blank" rel="noopener">Pesan sample</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hitung">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-label">Kalkulator harga</span>
+      <h2>Atur spesifikasi, harga muncul otomatis</h2>
+      <p>Pilih warna, ukuran, dan jumlah. Estimasi harga akan tampil seperti struk di samping.</p>
+    </div>
+    <div class="calc-wrap">
+      <div class="calc-panel">
+        <div class="field-group">
+          <label class="field-label">Jumlah warna cetak</label>
+          <div class="option-row" id="opt-warna">
+            <button type="button" class="opt-btn" data-val="1">1 warna</button>
+            <button type="button" class="opt-btn" data-val="2">2 warna</button>
+            <button type="button" class="opt-btn" data-val="3">3 warna</button>
+            <button type="button" class="opt-btn" data-val="4">4 warna</button>
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Ukuran kertas</label>
+          <div class="option-row" id="opt-ukuran">
+            <button type="button" class="opt-btn" data-val="10x10">10 x 10 cm</button>
+            <button type="button" class="opt-btn" data-val="15x20">15 x 20 cm</button>
+            <button type="button" class="opt-btn" data-val="30x30">30 x 30 cm</button>
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Jumlah lembar</label>
+          <div class="option-row" id="opt-jumlah">
+            <button type="button" class="opt-btn" data-val="2000">2.000</button>
+            <button type="button" class="opt-btn" data-val="4000">4.000</button>
+            <button type="button" class="opt-btn" data-val="6000">6.000</button>
+            <button type="button" class="opt-btn" data-val="10000">10.000</button>
+            <button type="button" class="opt-btn" data-val="custom">Custom</button>
+          </div>
+          <div class="custom-qty" id="customQtyWrap" style="display:none;">
+            <input type="number" id="customQtyInput" min="2000" step="2000" placeholder="mis. 12000">
+            <span class="custom-hint">Kelipatan 2.000 lembar</span>
+          </div>
+          <div class="field-error" id="calcError">Lengkapi pilihan warna, ukuran, dan jumlah dulu.</div>
+        </div>
+      </div>
+
+      <div class="receipt">
+        <div class="receipt-top"></div>
+        <div class="receipt-body">
+          <div class="receipt-head">
+            <div class="r-title">CETAK KERTAS NASI</div>
+            <div class="r-sub">Estimasi harga pesanan</div>
+          </div>
+          <div id="receiptContent">
+            <div class="r-empty">Pilih warna, ukuran, dan jumlah<br>di sebelah kiri untuk lihat harga.</div>
+          </div>
+        </div>
+        <div class="receipt-bottom"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sample">
+  <div class="wrap">
+    <div class="sample-banner">
+      <div>
+        <h2>Belum yakin dengan hasil cetaknya?</h2>
+        <p>Coba pesan sample produk dulu. Pegang langsung kualitas kertas dan hasil cetakannya sebelum order dalam jumlah besar.</p>
+      </div>
+      <a class="btn btn-outline" href="https://wa.me/6282141139117?text=Halo%2C%20saya%20ingin%20pesan%20sample%20produk%20kertas%20nasi." target="_blank" rel="noopener">Pesan sample sekarang</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">CetakKertasNasi</div>
+  <p>Jasa cetak kertas nasi custom &middot; Konsultasi via WhatsApp 0821-4113-9117</p>
+</footer>
+
+<script>
+/* =========================================================
+   RUMUS HARGA — SILAKAN EDIT ANGKA DI BAWAH INI SESUAI HARGA ANDA
+   Semua nilai dalam Rupiah, per pcs kecuali disebutkan lain.
+   ========================================================= */
+const PRICING = {
+  // Harga dasar per pcs untuk 1 warna, pada tingkat jumlah dasar (2.000 lembar)
+  basePricePerPcs: {
+    "10x10": 150,
+    "15x20": 220,
+    "30x30": 380
+  },
+  // Tambahan biaya per pcs untuk SETIAP warna tambahan di atas warna pertama
+  colorSurchargePerExtraColor: 30,
+  // Biaya setup/desain sekali bayar per pesanan
+  setupFee: 50000,
+  // Tingkatan diskon jumlah: semakin banyak jumlah, multiplier harga per pcs makin kecil
+  qtyTiers: [
+    { qty: 2000,  multiplier: 1.00 },
+    { qty: 4000,  multiplier: 0.95 },
+    { qty: 6000,  multiplier: 0.90 },
+    { qty: 10000, multiplier: 0.85 }
+  ],
+  // Batas bawah multiplier untuk jumlah custom di atas 10.000 (harga per pcs tidak akan turun di bawah batas ini)
+  minMultiplierForLargeQty: 0.80,
+  // Setiap tambahan 2.000 lembar di atas tingkat tertinggi (10.000), multiplier turun sebesar ini
+  multiplierStepPerExtra2000: 0.01
+};
+/* ========================================================= */
+
+const state = { warna: null, ukuran: null, jumlah: null, customQty: null };
+
+function setupOptionGroup(groupId, stateKey, onAfter){
+  const group = document.getElementById(groupId);
+  group.querySelectorAll('.opt-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      group.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state[stateKey] = btn.dataset.val;
+      if (onAfter) onAfter(btn.dataset.val);
+      calculate();
+    });
+  });
+}
+
+setupOptionGroup('opt-warna', 'warna');
+setupOptionGroup('opt-ukuran', 'ukuran');
+setupOptionGroup('opt-jumlah', 'jumlah', (val) => {
+  const wrap = document.getElementById('customQtyWrap');
+  if (val === 'custom') {
+    wrap.style.display = 'flex';
+  } else {
+    wrap.style.display = 'none';
+    state.customQty = null;
+  }
+});
+
+document.getElementById('customQtyInput').addEventListener('input', (e) => {
+  let v = parseInt(e.target.value, 10);
+  if (isNaN(v)) { state.customQty = null; calculate(); return; }
+  state.customQty = v;
+  calculate();
+});
+
+function getMultiplier(qty){
+  const tiers = PRICING.qtyTiers.slice().sort((a,b) => a.qty - b.qty);
+  if (qty <= tiers[0].qty) return tiers[0].multiplier;
+
+  const lastTier = tiers[tiers.length - 1];
+  if (qty >= lastTier.qty) {
+    const extraSteps = Math.floor((qty - lastTier.qty) / 2000);
+    const mult = lastTier.multiplier - (extraSteps * PRICING.multiplierStepPerExtra2000);
+    return Math.max(mult, PRICING.minMultiplierForLargeQty);
+  }
+
+  for (let i = 0; i < tiers.length - 1; i++) {
+    const lo = tiers[i], hi = tiers[i+1];
+    if (qty >= lo.qty && qty <= hi.qty) {
+      const ratio = (qty - lo.qty) / (hi.qty - lo.qty);
+      return lo.multiplier - ratio * (lo.multiplier - hi.multiplier);
+    }
+  }
+  return tiers[0].multiplier;
+}
+
+function formatRupiah(n){
+  return 'Rp' + Math.round(n).toLocaleString('id-ID');
+}
+
+function calculate(){
+  const errorEl = document.getElementById('calcError');
+  const contentEl = document.getElementById('receiptContent');
+
+  let jumlah = null;
+  if (state.jumlah === 'custom') {
+    jumlah = state.customQty;
+  } else if (state.jumlah) {
+    jumlah = parseInt(state.jumlah, 10);
+  }
+
+  const warnaValid = state.warna !== null;
+  const ukuranValid = state.ukuran !== null;
+  let jumlahValid = jumlah !== null && jumlah >= 2000;
+  if (state.jumlah === 'custom' && jumlahValid) {
+    jumlahValid = (jumlah % 2000 === 0);
+  }
+
+  if (!warnaValid || !ukuranValid || !jumlahValid) {
+    if (state.jumlah === 'custom' && jumlah !== null && jumlah % 2000 !== 0) {
+      errorEl.textContent = 'Jumlah custom harus kelipatan 2.000 (mis. 12.000, 14.000).';
+      errorEl.style.display = 'block';
+    } else if (state.jumlah === 'custom' && jumlah !== null && jumlah < 2000) {
+      errorEl.textContent = 'Jumlah minimal adalah 2.000 lembar.';
+      errorEl.style.display = 'block';
+    } else {
+      errorEl.style.display = 'none';
+    }
+    contentEl.innerHTML = '<div class="r-empty">Pilih warna, ukuran, dan jumlah<br>di sebelah kiri untuk lihat harga.</div>';
+    return;
+  }
+
+  errorEl.style.display = 'none';
+
+  const warna = parseInt(state.warna, 10);
+  const basePrice = PRICING.basePricePerPcs[state.ukuran];
+  const colorAddOn = (warna - 1) * PRICING.colorSurchargePerExtraColor;
+  const multiplier = getMultiplier(jumlah);
+  const pricePerPcs = (basePrice + colorAddOn) * multiplier;
+  const subtotal = pricePerPcs * jumlah;
+  const total = subtotal + PRICING.setupFee;
+
+  const ukuranLabel = state.ukuran.replace('x', ' x ') + ' cm';
+
+  contentEl.innerHTML = `
+    <div class="r-line"><span class="r-label">Ukuran</span><span>${ukuranLabel}</span></div>
+    <div class="r-line"><span class="r-label">Warna cetak</span><span>${warna} warna</span></div>
+    <div class="r-line"><span class="r-label">Jumlah</span><span>${jumlah.toLocaleString('id-ID')} lembar</span></div>
+    <div class="r-divider"></div>
+    <div class="r-line"><span class="r-label">Harga / pcs</span><span>${formatRupiah(pricePerPcs)}</span></div>
+    <div class="r-line"><span class="r-label">Subtotal cetak</span><span>${formatRupiah(subtotal)}</span></div>
+    <div class="r-line"><span class="r-label">Biaya setup</span><span>${formatRupiah(PRICING.setupFee)}</span></div>
+    <div class="r-divider"></div>
+    <div class="r-total"><span>Total estimasi</span><span class="r-amt">${formatRupiah(total)}</span></div>
+    <a class="btn btn-wa btn-block" style="margin-top:18px;" target="_blank" rel="noopener" href="${buildWaLink(ukuranLabel, warna, jumlah, pricePerPcs, total)}">Pesan via WhatsApp</a>
+    <div class="r-note">Harga estimasi, konfirmasi final via WhatsApp</div>
+  `;
+}
+
+function buildWaLink(ukuranLabel, warna, jumlah, pricePerPcs, total){
+  const msg = `Halo, saya ingin pesan kertas nasi cetak dengan spesifikasi:
+- Ukuran: ${ukuranLabel}
+- Warna cetak: ${warna} warna
+- Jumlah: ${jumlah.toLocaleString('id-ID')} lembar
+- Estimasi harga per pcs: ${formatRupiah(pricePerPcs)}
+- Estimasi total: ${formatRupiah(total)}
+
+Mohon info lebih lanjut untuk konfirmasi pesanan.`;
+  return `https://wa.me/6282141139117?text=${encodeURIComponent(msg)}`;
+}
+</script>
+
+</body>
+</html>
